@@ -1,47 +1,25 @@
-# 🤖 Telegram GPT-4 Bot for Persona, Audience & Competitor Analysis
+# 🤖 Telegram GPT Bot for Persona, Audience & Competitor Analysis
 
-**AI Developer & Prompt Engineer**  
-I built this Telegram bot to help users explore their personal brand, target audience, or competitors — step by step.  
-It uses **GPT-4** to generate structured, warm, and strategic text directly in the chat.
+A GPT-powered Telegram bot that guides users through strategic self-discovery, audience profiling, and competitor research.
 
-The bot works with custom prompts, asks questions, supports link parsing (Instagram, YouTube), and limits access to authorized users only.
+> **Built by KalinNika** — AI Developer & Prompt Engineer. Developed a full Telegram bot with integrated GPT-4 flow and warm, coach-style prompts. Clean UX, structured logic, and answer generation in a mini-book format.
 
 ---
 
-## 🚀 What It Can Do
+## 📁 Project Structure
 
-- 🧠 Asks tailored questions based on selected topic
-- 💬 Works as a dialog – block by block
-- 🔐 Access limited to approved Telegram users (ALLOWED_USERS)
-- 🤖 Uses OpenAI (GPT-4) for full text generation
-- 🔗 Can read and extract info from links (Instagram, YouTube)
-- 🌐 Works with VPN (for non-accessible links)
+* `bot.py` – main Telegram bot logic
+* `gpt_api.py` – sends structured prompt to GPT and returns response
+* `user_state.py` – manages question flow, answers, prompt assembly
+* `link_parser.py` – parses metadata from Instagram/YouTube links
+* `prompts/`
 
----
-
-## 🧰 Technologies Used
-
-- `Python 3.11+`
-- `python-telegram-bot`
-- `OpenAI GPT-4 API`
-- `BeautifulSoup4` + `requests`
-- `Regex`, `JSON`, `asyncio`
-
----
-
-## 📂 Project Structure
-📁 telegram-ai-bot/
-├── bot.py # Main bot logic
-├── gpt_api.py # GPT response logic
-├── user_state.py # Manages questions & answers
-├── link_parser.py # Parses and extracts metadata from links
-├── prompts/
-│ ├── unpacking.txt # Prompt for persona
-│ ├── audience.txt # Prompt for audience
-│ └── competitors.txt # Prompt for competitors
-├── config.json.example # Template config file
-├── test_openai_key.py # For testing OpenAI key
-└── *.png # Screenshots for README
+  * `unpacking.txt` – for personal analysis
+  * `audience.txt` – for audience research
+  * `competitors.txt` – for competitive analysis
+* `config.json.example` – example configuration with allowed users
+* `test_openai_key.py` – test your OpenAI key availability
+* `*.png` – screenshots for demo (in `/prompts` folder)
 
 ---
 
@@ -52,46 +30,59 @@ Create a `config.json` file like this:
 ```json
 {
   "TELEGRAM_TOKEN": "your-bot-token",
-  "ALLOWED_USERS": [12345678],
-  "openai_api_key": "your-gpt4-api-key"
+  "ALLOWED_USERS": [123456789],
+  "openai_api_key": "your-openai-api-key"
 }
+```
 
 ---
 
-##  💡 Prompt Style Example
-GPT prompt uses this system message:
+## 🧠 Prompt Style
+
+GPT uses this system message to generate answers:
+
+> You are a strategist and coach. Your job is to write a structured, helpful, 12-block analysis.
+> Each block must be clean, readable, and separated with two line breaks (`\n\n`).
+> Write like a warm coach from 2025 — with examples, lists, and practical ideas.
 
 ---
 
-You are a strategist and coach. Your job is to write a structured, helpful, 12-block analysis.
-Each block must be clear, readable, and separated with two line breaks (\n\n).
-Write like a warm coach from 2025 – with examples, ideas, and practical insights.
+## ▶️ How to Run
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Add your credentials in `config.json`
+
+Start the bot:
+
+```bash
+python bot.py
+```
+
+---
+
+## 📸 Screenshots
 
 | Start Menu                                                                                               | Question Flow                                                                                            | Access Control                                                                                           |
 | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| <img src="https://github.com/user-attachments/assets/2063f521-f594-4a15-a9f9-11b3a4243a71" width="300"/> | <img src="https://github.com/user-attachments/assets/312a269c-959b-453f-a7ee-cc51ded1fdf1" width="300"/> | <img src="https://github.com/user-attachments/assets/536a5d4b-f8f7-4c3f-9efd-a6be76e9a0e2" width="300"/> |
+| <img src="https://github.com/user-attachments/assets/2063f521-f594-4a15-a9f9-11b3a4243a71" width="250"/> | <img src="https://github.com/user-attachments/assets/312a269c-959b-453f-a7ee-cc51ded1fdf1" width="250"/> | <img src="https://github.com/user-attachments/assets/536a5d4b-f8f7-4c3f-9efd-a6be76e9a0e2" width="250"/> |
 
 ---
 
-##  ▶️ How to Run
-Clone the repo
+## 📄 License
 
-Install packages:
-
-pip install -r requirements.txt
-Add your credentials to config.json
-
-Run the bot:
-python bot.py
+[MIT License](LICENSE)
 
 ---
 
-##  📜 License
-MIT License
+## 🧑‍💻 Author
 
----
-
-##  🧑‍💻 Author
-KalinNika
+**KalinNika**
 AI Developer & Prompt Engineer
+[https://github.com/KalinNika](https://github.com/KalinNika)
+
 Focused on building useful AI tools with GPT, automation, and smart prompts.
