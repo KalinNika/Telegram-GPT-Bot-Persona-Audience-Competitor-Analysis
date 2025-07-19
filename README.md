@@ -25,7 +25,7 @@ A GPT-powered Telegram bot that guides users through strategic self-discovery, a
 
 ## ⚙️ Configuration
 
-Create a `config.json` file like this:
+Create a `config.json` file like this with your token, user id and api key:
 
 ```json
 {
